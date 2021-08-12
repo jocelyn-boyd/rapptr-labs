@@ -36,6 +36,7 @@ class MenuViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureButtonUI()
         title = "Coding Tasks"
     }
     
@@ -53,5 +54,24 @@ class MenuViewController: UIViewController {
     @IBAction func didPressAnimationButton(_ sender: Any) {
         let animationViewController = AnimationViewController()
         navigationController?.pushViewController(animationViewController, animated: true)
+    }
+    
+    // MARK: - Configurations
+    func configureButtonUI() {
+        
+        let buttons = [chatButton, loginButton, animationButton]
+        buttons.forEach { button in
+            
+            button?.titleEdgeInsets = UIEdgeInsets(top: 0,
+                                                   left: 16,
+                                                   bottom: 0,
+                                                   right: 0)
+            
+            button?.contentEdgeInsets = UIEdgeInsets(top: 0,
+                                                     left: 22,
+                                                     bottom: 0,
+                                                     right: 0)
+            button?.layer.cornerRadius = 8
+        }
     }
 }
