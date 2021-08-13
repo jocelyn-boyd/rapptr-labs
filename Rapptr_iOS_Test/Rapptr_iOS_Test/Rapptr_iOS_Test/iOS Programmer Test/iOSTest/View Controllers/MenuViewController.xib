@@ -35,6 +35,8 @@
                                 <constraint firstAttribute="height" constant="55" id="aw2-qe-VQh"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                            <inset key="contentEdgeInsets" minX="22" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="titleEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="CHAT">
                                 <color key="titleColor" red="0.10588235294117647" green="0.11764705882352941" blue="0.12156862745098039" alpha="1" colorSpace="calibratedRGB"/>
@@ -51,6 +53,8 @@
                                 <constraint firstAttribute="height" constant="55" id="Hax-SY-3hW"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                            <inset key="contentEdgeInsets" minX="22" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="titleEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                             <state key="normal" title="LOGIN">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <imageReference key="image" image="ic_login" symbolScale="medium"/>
@@ -66,6 +70,8 @@
                                 <constraint firstAttribute="height" constant="55" id="rKQ-D7-BfL"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                            <inset key="contentEdgeInsets" minX="22" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="titleEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                             <state key="normal" title="ANIMATION">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <imageReference key="image" image="ic_animation" symbolScale="medium"/>

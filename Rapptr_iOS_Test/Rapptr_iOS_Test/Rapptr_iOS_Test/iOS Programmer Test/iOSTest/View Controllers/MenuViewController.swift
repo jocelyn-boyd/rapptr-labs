@@ -62,16 +62,6 @@ class MenuViewController: UIViewController {
         
         let buttons = [chatButton, loginButton, animationButton]
         buttons.forEach { button in
-            
-            button?.titleEdgeInsets = UIEdgeInsets(top: 0,
-                                                   left: 16,
-                                                   bottom: 0,
-                                                   right: 0)
-            
-            button?.contentEdgeInsets = UIEdgeInsets(top: 0,
-                                                     left: 22,
-                                                     bottom: 0,
-                                                     right: 0)
             button?.layer.cornerRadius = 8
         }
     }
