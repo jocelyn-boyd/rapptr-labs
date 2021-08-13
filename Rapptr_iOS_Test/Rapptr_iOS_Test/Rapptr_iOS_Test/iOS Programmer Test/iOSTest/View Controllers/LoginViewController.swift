@@ -42,11 +42,17 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: - Actions
-    @IBAction func backAction(_ sender: Any) {
-        let mainMenuViewController = MenuViewController()
-        self.navigationController?.pushViewController(mainMenuViewController, animated: true)
-    }
+//    @IBAction func backAction(_ sender: Any) {
+//        let mainMenuViewController = MenuViewController()
+//        self.navigationController?.pushViewController(mainMenuViewController, animated: true)
+//    }
     
     @IBAction func didPressLoginButton(_ sender: Any) {
+    }
+    
+    //MARK: Configuration Methods
+    private func configureTextFields() {
+      
+        
     }
 }

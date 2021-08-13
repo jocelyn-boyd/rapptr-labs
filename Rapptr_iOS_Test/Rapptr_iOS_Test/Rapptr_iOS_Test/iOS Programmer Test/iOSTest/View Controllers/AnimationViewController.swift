@@ -30,11 +30,12 @@ class AnimationViewController: UIViewController {
     }
     
     // MARK: - Actions
-    @IBAction func backAction(_ sender: Any) {
-        let mainMenuViewController = MenuViewController()
-        self.navigationController?.pushViewController(mainMenuViewController, animated: true)
-    }
+//    @IBAction func backAction(_ sender: Any) {
+//        let mainMenuViewController = MenuViewController()
+//        self.navigationController?.pushViewController(mainMenuViewController, animated: true)
+//    }
     
     @IBAction func didPressFade(_ sender: Any) {
+        
     }
 }

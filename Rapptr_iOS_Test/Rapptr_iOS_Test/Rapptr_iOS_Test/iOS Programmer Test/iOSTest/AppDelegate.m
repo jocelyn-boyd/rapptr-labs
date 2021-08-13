@@ -24,6 +24,9 @@
     self.navController = [[UINavigationController alloc] initWithRootViewController:mainMenuViewController];
     [self.navController setNavigationBarHidden:NO];
     self.window.rootViewController = self.navController;
+    
+    self.window.tintColor = [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1.0];
+    UINavigationBar.appearance.barTintColor = [UIColor colorWithRed:14.0/255.0 green:92.0/255.0 blue:137.0/255.0 alpha:1.0];
 
     return YES;
 }

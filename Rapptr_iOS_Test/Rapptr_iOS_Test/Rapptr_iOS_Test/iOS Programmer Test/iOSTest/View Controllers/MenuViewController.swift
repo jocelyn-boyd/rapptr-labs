@@ -56,8 +56,8 @@ class MenuViewController: UIViewController {
         navigationController?.pushViewController(animationViewController, animated: true)
     }
     
-    // MARK: - Configurations
-    func configureButtonUI() {
+    // MARK: - Configuration Methods
+    private func configureButtonUI() {
         
         let buttons = [chatButton, loginButton, animationButton]
         buttons.forEach { button in

@@ -50,6 +50,11 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         chatTable.reloadData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.backButtonTitle = ""
+    }
+    
     // MARK: - Private
     private func configureTable(tableView: UITableView) {
         tableView.delegate = self
