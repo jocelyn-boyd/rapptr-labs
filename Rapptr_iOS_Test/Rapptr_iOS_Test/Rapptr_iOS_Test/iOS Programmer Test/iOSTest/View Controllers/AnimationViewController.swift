@@ -22,20 +22,34 @@ class AnimationViewController: UIViewController {
      *    section in Swfit to show off your skills. Anything your heart desires!
      *
      **/
-
+    
+    @IBOutlet fileprivate weak var logoImage: UIImageView!
+    
+    var logoPanGesture = UIPanGestureRecognizer()
+    var featherPanGesture = UIPanGestureRecognizer()
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Animation"
+        logoImage.alpha = 0
+        addGestures()
     }
     
     // MARK: - Actions
-//    @IBAction func backAction(_ sender: Any) {
-//        let mainMenuViewController = MenuViewController()
-//        self.navigationController?.pushViewController(mainMenuViewController, animated: true)
-//    }
-    
     @IBAction func didPressFade(_ sender: Any) {
+        UIView.animate(withDuration: 2) {
+            self.logoImage.alpha = 1
+        }
+    }
+    
+    private func addGestures() {
+        logoImage.isUserInteractionEnabled = true
+        logoPanGesture = UIPanGestureRecognizer(target: self, action: #selector(draggedLogo(_:)))
+        logoImage.addGestureRecognizer(logoPanGesture)
+    }
+    
+    @objc private func draggedLogo(_ sender: UIPanGestureRecognizer) {
         
     }
 }

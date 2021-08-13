@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnimationViewController">
             <connections>
+                <outlet property="logoImage" destination="5DT-RY-uzd" id="JTG-Sm-6fw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -44,8 +45,6 @@
             </constraints>
             <point key="canvasLocation" x="34.5" y="54.5"/>
         </view>
-        <panGestureRecognizer minimumNumberOfTouches="1" id="NOd-gi-zqB"/>
-        <panGestureRecognizer minimumNumberOfTouches="1" id="jb9-kP-4iS"/>
     </objects>
     <resources>
         <image name="ic_logo" width="317" height="74"/>
