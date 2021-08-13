@@ -38,18 +38,27 @@ class AnimationViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func didPressFade(_ sender: Any) {
-        UIView.animate(withDuration: 2) {
+        UIView.animate(withDuration: 1) {
             self.logoImage.alpha = 1
         }
     }
     
     private func addGestures() {
         logoImage.isUserInteractionEnabled = true
-        logoPanGesture = UIPanGestureRecognizer(target: self, action: #selector(draggedLogo(_:)))
+        logoPanGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
         logoImage.addGestureRecognizer(logoPanGesture)
     }
     
-    @objc private func draggedLogo(_ sender: UIPanGestureRecognizer) {
-        
+    @objc private func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
+       
+        if gesture.state == .changed {
+            let translation = gesture.translation(in: self.logoImage)
+            logoImage.transform = CGAffineTransform(translationX: translation.x, y: translation.y)
+        }
+        else if gesture.state == .ended {
+            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 1, options: .curveEaseIn) {
+                self.logoImage.transform = .identity
+            }
+        }
     }
 }

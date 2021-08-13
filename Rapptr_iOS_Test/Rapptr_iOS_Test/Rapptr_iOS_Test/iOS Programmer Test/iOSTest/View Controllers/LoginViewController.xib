@@ -49,7 +49,9 @@
                                 <constraint firstAttribute="height" constant="55" id="6JF-Af-Mh7"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                            <state key="normal" title="LOGIN"/>
+                            <state key="normal" title="LOGIN">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
                             <connections>
                                 <action selector="didPressLoginButton:" destination="-1" eventType="touchUpInside" id="Rjq-ek-LWJ"/>
                             </connections>
