@@ -32,6 +32,8 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         messages = [Message]()
         configureTable(tableView: chatTable)
         title = "Chat"
@@ -50,10 +52,6 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         chatTable.reloadData()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationItem.backButtonTitle = ""
-    }
     
     // MARK: - Private
     private func configureTable(tableView: UITableView) {
@@ -84,8 +82,8 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     // MARK: - IBAction
-    @IBAction func backAction(_ sender: Any) {
-        let mainMenuViewController = MenuViewController()
-        self.navigationController?.pushViewController(mainMenuViewController, animated: true)
-    }
+//    @IBAction func backAction(_ sender: Any) {
+//        let mainMenuViewController = MenuViewController()
+//        self.navigationController?.pushViewController(mainMenuViewController, animated: true)
+//    }
 }

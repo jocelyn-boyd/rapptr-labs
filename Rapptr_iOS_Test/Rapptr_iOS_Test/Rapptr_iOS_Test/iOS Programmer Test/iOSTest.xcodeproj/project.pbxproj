@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08952BBE26C6B694000500AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08952BBD26C6B694000500AF /* AppDelegate.swift */; };
 		6900F5E121BF4726007AFBB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6900F5E021BF4726007AFBB8 /* Assets.xcassets */; };
 		F21312DA1E0481F80029E33F /* ChatClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F21312D71E0481F80029E33F /* ChatClient.m */; };
 		F21312DB1E0481F80029E33F /* LoginClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F21312D91E0481F80029E33F /* LoginClient.m */; };
@@ -17,8 +18,6 @@
 		F2603FD0202A4083001BCA22 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2603FCF202A4083001BCA22 /* ChatViewController.swift */; };
 		F2603FD2202A4089001BCA22 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2603FD1202A4089001BCA22 /* LoginViewController.swift */; };
 		F2603FD4202A4092001BCA22 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2603FD3202A4092001BCA22 /* MenuViewController.swift */; };
-		F264BD9E1D7F4F0400275D46 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F264BD9D1D7F4F0400275D46 /* main.m */; };
-		F264BDA11D7F4F0400275D46 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F264BDA01D7F4F0400275D46 /* AppDelegate.m */; };
 		F264BDB71D7F503300275D46 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F264BDB51D7F503300275D46 /* MenuViewController.xib */; };
 		F264BDBE1D7F52E500275D46 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F264BDBD1D7F52E500275D46 /* LaunchScreen.xib */; };
 		F264BDD21D7F641200275D46 /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F264BDD01D7F641200275D46 /* ChatViewController.xib */; };
@@ -28,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		08952BBD26C6B694000500AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6900F5E021BF4726007AFBB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F21312D61E0481F80029E33F /* ChatClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatClient.h; path = Clients/ChatClient.h; sourceTree = "<group>"; };
 		F21312D71E0481F80029E33F /* ChatClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatClient.m; path = Clients/ChatClient.m; sourceTree = "<group>"; };
@@ -41,9 +41,6 @@
 		F2603FD1202A4089001BCA22 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "View Controllers/LoginViewController.swift"; sourceTree = "<group>"; };
 		F2603FD3202A4092001BCA22 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = "View Controllers/MenuViewController.swift"; sourceTree = "<group>"; };
 		F264BD991D7F4F0400275D46 /* iOSTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F264BD9D1D7F4F0400275D46 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F264BD9F1D7F4F0400275D46 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		F264BDA01D7F4F0400275D46 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F264BDAD1D7F4F0500275D46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F264BDB51D7F503300275D46 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuViewController.xib; path = "View Controllers/MenuViewController.xib"; sourceTree = "<group>"; };
 		F264BDBD1D7F52E500275D46 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -102,9 +99,8 @@
 				F273B62D1D95B1B70069037F /* Views */,
 				F264BDB81D7F503A00275D46 /* View Controllers */,
 				F264BD9C1D7F4F0400275D46 /* Supporting Files */,
-				F264BD9F1D7F4F0400275D46 /* AppDelegate.h */,
-				F264BDA01D7F4F0400275D46 /* AppDelegate.m */,
 				F264BDAD1D7F4F0500275D46 /* Info.plist */,
+				08952BBD26C6B694000500AF /* AppDelegate.swift */,
 			);
 			path = iOSTest;
 			sourceTree = "<group>";
@@ -112,7 +108,6 @@
 		F264BD9C1D7F4F0400275D46 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F264BD9D1D7F4F0400275D46 /* main.m */,
 				F2DB9DCD201695F000339CF0 /* iOSTest-Bridging-Header.h */,
 				F264BDBD1D7F52E500275D46 /* LaunchScreen.xib */,
 			);
@@ -279,16 +274,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08952BBE26C6B694000500AF /* AppDelegate.swift in Sources */,
 				F2603FD2202A4089001BCA22 /* LoginViewController.swift in Sources */,
 				F2603FD4202A4092001BCA22 /* MenuViewController.swift in Sources */,
-				F264BDA11D7F4F0400275D46 /* AppDelegate.m in Sources */,
 				F273B6411D95BD500069037F /* Message.m in Sources */,
 				F2603FD0202A4083001BCA22 /* ChatViewController.swift in Sources */,
 				F2603FCE202A407C001BCA22 /* AnimationViewController.swift in Sources */,
 				F21312DA1E0481F80029E33F /* ChatClient.m in Sources */,
 				F21312DB1E0481F80029E33F /* LoginClient.m in Sources */,
 				F2603FCB202A404D001BCA22 /* ChatTableViewCell.swift in Sources */,
-				F264BD9E1D7F4F0400275D46 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
