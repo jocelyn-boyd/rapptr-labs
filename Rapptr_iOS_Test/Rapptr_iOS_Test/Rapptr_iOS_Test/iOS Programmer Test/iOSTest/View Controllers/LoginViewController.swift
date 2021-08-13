@@ -30,10 +30,15 @@ class LoginViewController: UIViewController {
     // MARK: - Properties
     private var client: LoginClient?
     
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Login"
+        configureTextFields()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -42,17 +47,25 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: - Actions
-//    @IBAction func backAction(_ sender: Any) {
-//        let mainMenuViewController = MenuViewController()
-//        self.navigationController?.pushViewController(mainMenuViewController, animated: true)
-//    }
-    
     @IBAction func didPressLoginButton(_ sender: Any) {
     }
     
     //MARK: Configuration Methods
     private func configureTextFields() {
-      
+        let emailTextFieldHeight = self.emailTextField.frame.height
+        let emailPaddingView = UIView(frame: CGRect(x: 0,
+                                                    y: 0,
+                                                    width: 24,
+                                                    height: emailTextFieldHeight))
+        emailTextField.leftView = emailPaddingView
+        emailTextField.leftViewMode = UITextField.ViewMode.always
         
+        let passwordTextFieldHeight = self.passwordTextField.frame.height
+        let passwordPaddingView =  UIView(frame: CGRect(x: 0,
+                                                        y: 0,
+                                                        width: 24,
+                                                        height: passwordTextFieldHeight))
+        passwordTextField.leftView = passwordPaddingView
+        passwordTextField.leftViewMode = UITextField.ViewMode.always
     }
 }
