@@ -37,7 +37,6 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureButtonUI()
-        
         title = "Coding Tasks"
     }
     
@@ -59,7 +58,6 @@ class MenuViewController: UIViewController {
     
     // MARK: - Configuration Methods
     private func configureButtonUI() {
-        
         let buttons = [chatButton, loginButton, animationButton]
         buttons.forEach { button in
             button?.layer.cornerRadius = 8
