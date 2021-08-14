@@ -31,8 +31,8 @@ class AnimationViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Animation"
         logoImage.alpha = 0
+        configureNavigationBar()
         addGesture()
     }
     
@@ -41,6 +41,13 @@ class AnimationViewController: UIViewController {
         UIView.animate(withDuration: 1) {
             self.logoImage.alpha = 1
         }
+        self.navigationItem.rightBarButtonItem?.isEnabled = true
+    }
+    
+    private func configureNavigationBar() {
+        title = "Animation"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Reset", style: .done, target: self, action: #selector(resetButtonTapped))
+        self.navigationItem.rightBarButtonItem?.isEnabled = false
     }
     
     private func addGesture() {
@@ -60,5 +67,10 @@ class AnimationViewController: UIViewController {
                 self.logoImage.transform = .identity
             }
         }
+    }
+    
+    @objc func resetButtonTapped() {
+        logoImage.alpha = 0
+        self.navigationItem.rightBarButtonItem?.isEnabled = false
     }
 }
