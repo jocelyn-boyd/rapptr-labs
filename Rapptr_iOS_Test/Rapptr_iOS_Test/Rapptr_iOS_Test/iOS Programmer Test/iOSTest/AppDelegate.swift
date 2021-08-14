@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let mainMenuViewController = MenuViewController(nibName: "MenuViewController", bundle: nil)
         let navController = UINavigationController(rootViewController: mainMenuViewController)
-        let navBarTintColor = UIColor(red: 14/255, green: 92/255, blue: 137/255, alpha: 1)
-        let navTintColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
+        let navBarTintColor = Constants.Color.customBlue
+        let navTintColor = Constants.Color.customHeaderTextColor
         
         navController.navigationBar.tintColor = navTintColor
         navController.navigationBar.titleTextAttributes = [.foregroundColor: navTintColor]
