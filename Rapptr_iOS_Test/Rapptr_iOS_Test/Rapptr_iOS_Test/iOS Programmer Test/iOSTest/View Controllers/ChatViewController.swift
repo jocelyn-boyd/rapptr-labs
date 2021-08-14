@@ -50,7 +50,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     
-    // MARK: - Private
+    // MARK: - Configuration Methods
     private func configureTable(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self

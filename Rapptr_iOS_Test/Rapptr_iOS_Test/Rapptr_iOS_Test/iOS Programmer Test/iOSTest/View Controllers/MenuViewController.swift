@@ -36,8 +36,8 @@ class MenuViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureButtonUI()
         title = "Coding Tasks"
+        configureButtonUI()
     }
     
     // MARK: - Actions

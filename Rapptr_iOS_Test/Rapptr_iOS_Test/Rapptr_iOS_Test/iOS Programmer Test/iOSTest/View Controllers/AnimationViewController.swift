@@ -43,6 +43,8 @@ class AnimationViewController: UIViewController {
         self.navigationItem.rightBarButtonItem?.isEnabled = true
     }
     
+    
+    // MARK: Private Methods
     private func configureViewController() {
         logoImage.alpha = 0
         title = "Animation"
@@ -57,6 +59,7 @@ class AnimationViewController: UIViewController {
         logoImage.addGestureRecognizer(logoPanGesture)
     }
     
+    //MARK: @objc Methods
     @objc private func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
        
         if gesture.state == .changed {

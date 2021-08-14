@@ -39,7 +39,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         title = "Login"
         configureTextFields()
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,6 +48,7 @@ class LoginViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func didPressLoginButton(_ sender: Any) {
+        
     }
     
     //MARK: Configuration Methods

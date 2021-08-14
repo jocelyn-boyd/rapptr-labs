@@ -14,8 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
+        // Override point for customization after application launch.
         let mainMenuViewController = MenuViewController(nibName: "MenuViewController", bundle: nil)
         let navController = UINavigationController(rootViewController: mainMenuViewController)
         let navBarTintColor = UIColor.getHeaderBackgroundColor()
