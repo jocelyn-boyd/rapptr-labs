@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5t-CT-m0O">
-                        <rect key="frame" x="16" y="11" width="50" height="50"/>
+                        <rect key="frame" x="16" y="0.0" width="50" height="50"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wCc-7p-THU">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -39,19 +39,19 @@
                         </constraints>
                     </view>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ecX-uZ-Cey" userLabel="TextStackView">
-                        <rect key="frame" x="73" y="11" width="300" height="139"/>
+                        <rect key="frame" x="73" y="0.0" width="300" height="150"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drew" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="50" translatesAutoresizingMaskIntoConstraints="NO" id="NHn-U7-rWh">
-                                <rect key="frame" x="0.0" y="0.0" width="300" height="18"/>
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="16"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                 <color key="textColor" red="0.1058823529" green="0.1176470588" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BlH-p3-hmO" userLabel="BodyContainerView">
-                                <rect key="frame" x="0.0" y="22" width="300" height="117"/>
+                                <rect key="frame" x="0.0" y="20" width="300" height="130"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4D-p6-QTk">
-                                        <rect key="frame" x="8" y="8" width="284" height="101"/>
+                                        <rect key="frame" x="8" y="8" width="284" height="114"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <string key="text">Team, can we give job applicant staking this test some examples of the types of apps they'd be working on if they joined our team?</string>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
@@ -82,9 +82,9 @@
                 <constraints>
                     <constraint firstItem="ecX-uZ-Cey" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" constant="-36" id="7dr-eb-nca"/>
                     <constraint firstItem="f5t-CT-m0O" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="NTm-0h-w0d"/>
-                    <constraint firstItem="f5t-CT-m0O" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="NZg-ee-DCl"/>
+                    <constraint firstItem="f5t-CT-m0O" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="NZg-ee-DCl"/>
                     <constraint firstItem="ecX-uZ-Cey" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottom" constant="-24" id="Rmh-hq-CjX"/>
-                    <constraint firstItem="ecX-uZ-Cey" firstAttribute="top" secondItem="f5t-CT-m0O" secondAttribute="top" id="hWK-rc-YG2"/>
+                    <constraint firstItem="ecX-uZ-Cey" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="hWK-rc-YG2"/>
                     <constraint firstItem="ecX-uZ-Cey" firstAttribute="leading" secondItem="f5t-CT-m0O" secondAttribute="trailing" constant="7" id="phY-bR-jY3"/>
                 </constraints>
             </tableViewCellContentView>

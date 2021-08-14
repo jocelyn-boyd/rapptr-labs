@@ -27,6 +27,7 @@ class ChatTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         bodyContainerView.layer.cornerRadius = 8
+        bodyContainerView.layer.borderWidth = 0.1
         userImage.makeRounded()
     }
     
