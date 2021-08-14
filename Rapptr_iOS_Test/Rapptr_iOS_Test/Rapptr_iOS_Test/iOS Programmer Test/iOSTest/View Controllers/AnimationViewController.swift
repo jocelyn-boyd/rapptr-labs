@@ -33,7 +33,7 @@ class AnimationViewController: UIViewController {
         super.viewDidLoad()
         title = "Animation"
         logoImage.alpha = 0
-        addGestures()
+        addGesture()
     }
     
     // MARK: - Actions
@@ -43,7 +43,7 @@ class AnimationViewController: UIViewController {
         }
     }
     
-    private func addGestures() {
+    private func addGesture() {
         logoImage.isUserInteractionEnabled = true
         logoPanGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
         logoImage.addGestureRecognizer(logoPanGesture)
