@@ -18,12 +18,16 @@ class ChatTableViewCell: UITableViewCell {
      **/
     
     // MARK: - Outlets
+    @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var header: UILabel!
+    @IBOutlet weak var bodyContainerView: UIView!
     @IBOutlet weak var body: UILabel!
     
     // MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
+        bodyContainerView.layer.cornerRadius = 8
+        userImage.makeRounded()
     }
     
     // MARK: - Public

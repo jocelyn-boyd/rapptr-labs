@@ -31,12 +31,9 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
+        title = "Chat"
         messages = [Message]()
         configureTable(tableView: chatTable)
-        title = "Chat"
         
         // TODO: Remove test data when we have actual data from the server loaded
         messages?.append(Message(testName: "James", withTestMessage: "Hey Guys!"))
@@ -59,6 +56,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.dataSource = self
         tableView.register(UINib(nibName: "ChatTableViewCell", bundle: nil), forCellReuseIdentifier: "ChatTableViewCell")
         tableView.tableFooterView = UIView(frame: .zero)
+        tableView.backgroundColor = Constants.Color.customLightGray
     }
     
     // MARK: - UITableViewDataSource
@@ -76,14 +74,4 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return messages!.count
     }
     
-    // MARK: - UITableViewDelegate
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 58.0
-    }
-    
-    // MARK: - IBAction
-//    @IBAction func backAction(_ sender: Any) {
-//        let mainMenuViewController = MenuViewController()
-//        self.navigationController?.pushViewController(mainMenuViewController, animated: true)
-//    }
 }

@@ -18,22 +18,19 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tOq-9z-JVj">
-                    <rect key="frame" x="0.0" y="81" width="375" height="586"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tOq-9z-JVj">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZB-m9-c27">
-                    <rect key="frame" x="16" y="20" width="46" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Back"/>
-                    <connections>
-                        <action selector="backAction:" destination="-1" eventType="touchUpInside" id="67p-YN-8dx"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <point key="canvasLocation" x="101.5" y="54.5"/>
+            <constraints>
+                <constraint firstItem="tOq-9z-JVj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="5e0-bV-hDT"/>
+                <constraint firstItem="tOq-9z-JVj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Ku5-UU-WdK"/>
+                <constraint firstAttribute="bottom" secondItem="tOq-9z-JVj" secondAttribute="bottom" id="fwp-qx-vNF"/>
+                <constraint firstAttribute="trailing" secondItem="tOq-9z-JVj" secondAttribute="trailing" id="ii5-rl-SKc"/>
+            </constraints>
+            <point key="canvasLocation" x="297" y="92"/>
         </view>
     </objects>
 </document>
