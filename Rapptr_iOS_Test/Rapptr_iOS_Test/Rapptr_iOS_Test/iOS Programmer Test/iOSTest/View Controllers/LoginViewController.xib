@@ -25,7 +25,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Chq-nM-eJK">
                     <rect key="frame" x="30" y="108" width="315" height="213"/>
                     <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xoa-Sh-ZA6" userLabel="UITextField">
+                        <textField opaque="NO" clipsSubviews="YES" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xoa-Sh-ZA6" userLabel="UITextField">
                             <rect key="frame" x="0.0" y="0.0" width="315" height="55"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
@@ -34,7 +34,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Yh-GL-2qX" userLabel="UITextField">
+                        <textField opaque="NO" clipsSubviews="YES" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9Yh-GL-2qX" userLabel="UITextField">
                             <rect key="frame" x="0.0" y="79" width="315" height="55"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
