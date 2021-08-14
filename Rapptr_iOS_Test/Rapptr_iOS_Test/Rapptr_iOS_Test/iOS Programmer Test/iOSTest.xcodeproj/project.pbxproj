@@ -10,9 +10,10 @@
 		08952BBE26C6B694000500AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08952BBD26C6B694000500AF /* AppDelegate.swift */; };
 		08952BC426C743E7000500AF /* ImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08952BC326C743E7000500AF /* ImageView+Ext.swift */; };
 		08952BC926C7675A000500AF /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08952BC826C7675A000500AF /* Color+Ext.swift */; };
+		08952BCB26C78B11000500AF /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08952BCA26C78B11000500AF /* Message.swift */; };
+		08952BCD26C78E30000500AF /* ChatClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08952BCC26C78E30000500AF /* ChatClient.swift */; };
+		08952BCF26C78E3D000500AF /* LoginClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08952BCE26C78E3D000500AF /* LoginClient.swift */; };
 		6900F5E121BF4726007AFBB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6900F5E021BF4726007AFBB8 /* Assets.xcassets */; };
-		F21312DA1E0481F80029E33F /* ChatClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F21312D71E0481F80029E33F /* ChatClient.m */; };
-		F21312DB1E0481F80029E33F /* LoginClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F21312D91E0481F80029E33F /* LoginClient.m */; };
 		F21312E11E0485B50029E33F /* AnimationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F21312DF1E0485B50029E33F /* AnimationViewController.xib */; };
 		F2603FCB202A404D001BCA22 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2603FC9202A404D001BCA22 /* ChatTableViewCell.swift */; };
 		F2603FCC202A404D001BCA22 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2603FCA202A404D001BCA22 /* ChatTableViewCell.xib */; };
@@ -24,7 +25,6 @@
 		F264BDBE1D7F52E500275D46 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F264BDBD1D7F52E500275D46 /* LaunchScreen.xib */; };
 		F264BDD21D7F641200275D46 /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F264BDD01D7F641200275D46 /* ChatViewController.xib */; };
 		F264BDD71D7F642200275D46 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F264BDD51D7F642200275D46 /* LoginViewController.xib */; };
-		F273B6411D95BD500069037F /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = F273B6401D95BD500069037F /* Message.m */; };
 		F273B8341D95C3000069037F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F273B8331D95C3000069037F /* ImageIO.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,11 +32,10 @@
 		08952BBD26C6B694000500AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08952BC326C743E7000500AF /* ImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Ext.swift"; sourceTree = "<group>"; };
 		08952BC826C7675A000500AF /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
+		08952BCA26C78B11000500AF /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		08952BCC26C78E30000500AF /* ChatClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatClient.swift; sourceTree = "<group>"; };
+		08952BCE26C78E3D000500AF /* LoginClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginClient.swift; sourceTree = "<group>"; };
 		6900F5E021BF4726007AFBB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F21312D61E0481F80029E33F /* ChatClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatClient.h; path = Clients/ChatClient.h; sourceTree = "<group>"; };
-		F21312D71E0481F80029E33F /* ChatClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatClient.m; path = Clients/ChatClient.m; sourceTree = "<group>"; };
-		F21312D81E0481F80029E33F /* LoginClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginClient.h; path = Clients/LoginClient.h; sourceTree = "<group>"; };
-		F21312D91E0481F80029E33F /* LoginClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginClient.m; path = Clients/LoginClient.m; sourceTree = "<group>"; };
 		F21312DF1E0485B50029E33F /* AnimationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AnimationViewController.xib; path = "View Controllers/AnimationViewController.xib"; sourceTree = "<group>"; };
 		F2603FC9202A404D001BCA22 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatTableViewCell.swift; path = Views/Cells/ChatTableViewCell.swift; sourceTree = "<group>"; };
 		F2603FCA202A404D001BCA22 /* ChatTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChatTableViewCell.xib; path = Views/Cells/ChatTableViewCell.xib; sourceTree = "<group>"; };
@@ -50,10 +49,7 @@
 		F264BDBD1D7F52E500275D46 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		F264BDD01D7F641200275D46 /* ChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChatViewController.xib; path = "View Controllers/ChatViewController.xib"; sourceTree = "<group>"; };
 		F264BDD51D7F642200275D46 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = "View Controllers/LoginViewController.xib"; sourceTree = "<group>"; };
-		F273B63F1D95BD500069037F /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Message.h; path = Models/Message.h; sourceTree = "<group>"; };
-		F273B6401D95BD500069037F /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Message.m; path = Models/Message.m; sourceTree = "<group>"; };
 		F273B8331D95C3000069037F /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		F2DB9DCD201695F000339CF0 /* iOSTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOSTest-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				08952BC726C74FD1000500AF /* Extensions */,
-				F2DB9DCD201695F000339CF0 /* iOSTest-Bridging-Header.h */,
 				F264BDBD1D7F52E500275D46 /* LaunchScreen.xib */,
 			);
 			name = "Supporting Files";
@@ -159,8 +154,7 @@
 		F273B63E1D95BD360069037F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F273B63F1D95BD500069037F /* Message.h */,
-				F273B6401D95BD500069037F /* Message.m */,
+				08952BCA26C78B11000500AF /* Message.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -203,10 +197,8 @@
 		F2837BEE1D9AE99D00A57AC8 /* Clients */ = {
 			isa = PBXGroup;
 			children = (
-				F21312D61E0481F80029E33F /* ChatClient.h */,
-				F21312D71E0481F80029E33F /* ChatClient.m */,
-				F21312D81E0481F80029E33F /* LoginClient.h */,
-				F21312D91E0481F80029E33F /* LoginClient.m */,
+				08952BCC26C78E30000500AF /* ChatClient.swift */,
+				08952BCE26C78E3D000500AF /* LoginClient.swift */,
 			);
 			name = Clients;
 			sourceTree = "<group>";
@@ -289,15 +281,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				08952BBE26C6B694000500AF /* AppDelegate.swift in Sources */,
+				08952BCF26C78E3D000500AF /* LoginClient.swift in Sources */,
 				F2603FD2202A4089001BCA22 /* LoginViewController.swift in Sources */,
 				F2603FD4202A4092001BCA22 /* MenuViewController.swift in Sources */,
-				F273B6411D95BD500069037F /* Message.m in Sources */,
 				08952BC926C7675A000500AF /* Color+Ext.swift in Sources */,
 				F2603FD0202A4083001BCA22 /* ChatViewController.swift in Sources */,
 				F2603FCE202A407C001BCA22 /* AnimationViewController.swift in Sources */,
+				08952BCD26C78E30000500AF /* ChatClient.swift in Sources */,
 				08952BC426C743E7000500AF /* ImageView+Ext.swift in Sources */,
-				F21312DA1E0481F80029E33F /* ChatClient.m in Sources */,
-				F21312DB1E0481F80029E33F /* LoginClient.m in Sources */,
+				08952BCB26C78B11000500AF /* Message.swift in Sources */,
 				F2603FCB202A404D001BCA22 /* ChatTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

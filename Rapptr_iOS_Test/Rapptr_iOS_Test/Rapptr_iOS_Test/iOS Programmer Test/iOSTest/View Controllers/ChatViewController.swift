@@ -22,7 +22,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
      **/
     
     // MARK: - Properties
-    private var client: ChatClient?
+    //private var client: ChatClient?
     private var messages: [Message]?
     
     // MARK: - Outlets
@@ -36,15 +36,15 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         configureTable(tableView: chatTable)
         
         // TODO: Remove test data when we have actual data from the server loaded
-        messages?.append(Message(testName: "James", withTestMessage: "Hey Guys!"))
-        messages?.append(Message(testName:"Paul", withTestMessage:"What's up?"))
-        messages?.append(Message(testName:"Amy", withTestMessage:"Hey! :)"))
-        messages?.append(Message(testName:"James", withTestMessage:"Want to grab some food later?"))
-        messages?.append(Message(testName:"Paul", withTestMessage:"Sure, time and place?"))
-        messages?.append(Message(testName:"Amy", withTestMessage:"YAS! I am starving!!!"))
-        messages?.append(Message(testName:"James", withTestMessage:"1 hr at the Local Burger sound good?"))
-        messages?.append(Message(testName:"Paul", withTestMessage:"Sure thing"))
-        messages?.append(Message(testName:"Amy", withTestMessage:"See you there :P"))
+        messages?.append(Message(username: "James", text: "Hey Guys!"))
+        messages?.append(Message(username:"Paul", text:"What's up?"))
+        messages?.append(Message(username:"Amy", text:"Hey! :)"))
+        messages?.append(Message(username:"James", text:"Want to grab some food later?"))
+        messages?.append(Message(username:"Paul", text:"Sure, time and place?"))
+        messages?.append(Message(username:"Amy", text:"YAS! I am starving!!!"))
+        messages?.append(Message(username:"James", text:"1 hr at the Local Burger sound good?"))
+        messages?.append(Message(username:"Paul", text:"Sure thing"))
+        messages?.append(Message(username:"Amy", text:"See you there :P"))
         
         chatTable.reloadData()
     }

@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
      **/
     
     // MARK: - Properties
-    private var client: LoginClient?
+    //private var client: LoginClient?
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
