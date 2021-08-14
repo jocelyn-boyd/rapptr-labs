@@ -48,7 +48,7 @@ class AnimationViewController: UIViewController {
         title = "Animation"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Reset", style: .done, target: self, action: #selector(resetButtonTapped))
         self.navigationItem.rightBarButtonItem?.isEnabled = false
-        view.backgroundColor = UIColor.getCustomUIViewBackgroundColor()
+        view.backgroundColor = UIColor.getUIViewBackgroundColor()
     }
     
     private func addGesture() {

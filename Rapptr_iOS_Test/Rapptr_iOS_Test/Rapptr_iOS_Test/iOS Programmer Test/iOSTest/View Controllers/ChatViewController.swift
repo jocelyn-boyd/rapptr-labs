@@ -56,7 +56,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.dataSource = self
         tableView.register(UINib(nibName: "ChatTableViewCell", bundle: nil), forCellReuseIdentifier: "ChatTableViewCell")
         tableView.tableFooterView = UIView(frame: .zero)
-        tableView.backgroundColor = UIColor.getCustomChatBackgroundColor()
+        tableView.backgroundColor = UIColor.getChatBackgroundColor()
     }
     
     // MARK: - UITableViewDataSource

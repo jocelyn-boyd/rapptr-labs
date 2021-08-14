@@ -32,6 +32,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -59,7 +60,8 @@ class LoginViewController: UIViewController {
                                                     height: emailTextFieldHeight))
         emailTextField.leftView = emailPaddingView
         emailTextField.leftViewMode = UITextField.ViewMode.always
-        emailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [.foregroundColor: UIColor.getCustomPlaceholderColor()])
+        emailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [.foregroundColor: UIColor.getTextFieldPlaceholderColor()])
+   
         
         let passwordTextFieldHeight = self.passwordTextField.frame.height
         let passwordPaddingView =  UIView(frame: CGRect(x: 0,
@@ -68,6 +70,6 @@ class LoginViewController: UIViewController {
                                                         height: passwordTextFieldHeight))
         passwordTextField.leftView = passwordPaddingView
         passwordTextField.leftViewMode = UITextField.ViewMode.always
-        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [.foregroundColor: UIColor.getCustomPlaceholderColor()])
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [.foregroundColor: UIColor.getTextFieldPlaceholderColor()])
     }
 }
