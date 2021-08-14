@@ -59,6 +59,7 @@ class LoginViewController: UIViewController {
                                                     height: emailTextFieldHeight))
         emailTextField.leftView = emailPaddingView
         emailTextField.leftViewMode = UITextField.ViewMode.always
+        emailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [.foregroundColor: UIColor.getCustomPlaceholderColor()])
         
         let passwordTextFieldHeight = self.passwordTextField.frame.height
         let passwordPaddingView =  UIView(frame: CGRect(x: 0,
@@ -67,5 +68,6 @@ class LoginViewController: UIViewController {
                                                         height: passwordTextFieldHeight))
         passwordTextField.leftView = passwordPaddingView
         passwordTextField.leftViewMode = UITextField.ViewMode.always
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [.foregroundColor: UIColor.getCustomPlaceholderColor()])
     }
 }
