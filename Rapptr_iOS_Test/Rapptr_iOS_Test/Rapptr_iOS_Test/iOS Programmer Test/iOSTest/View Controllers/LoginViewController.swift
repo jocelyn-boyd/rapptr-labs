@@ -27,12 +27,12 @@ class LoginViewController: UIViewController {
      * 7) When login is successful, tapping 'OK' in the UIAlertController should bring you back to the main menu.
      **/
     
-    // MARK: - Properties
-    //private var client: LoginClient?
-    
+    // MARK: - Outlets
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-
+    
+    // MARK: - Properties
+    //private var client: LoginClient?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -51,7 +51,14 @@ class LoginViewController: UIViewController {
         
     }
     
-    //MARK: Configuration Methods
+    // MARK: Private Methods
+    
+    private func makeGeneralAlert(with title: String, message: String) {
+      let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+      alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+      present(alertVC, animated: true, completion: nil)
+    }
+    
     private func configureTextFields() {
         let emailTextFieldHeight = self.emailTextField.frame.height
         let emailPaddingView = UIView(frame: CGRect(x: 0,
