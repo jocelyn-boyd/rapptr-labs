@@ -20,12 +20,13 @@ import Foundation
 class ChatClient {
     
     static let manager = ChatClient()
+    private init() {}
    
     func fetchAllMessages(completionHandler: @escaping (Result<[Message],NetworkError>) -> Void) {
         
-        let endpoint = "http://dev.rapptrlabs.com/Tests/scripts/chat_log.php"
+        let endpoint = URL(string:"http://dev.rapptrlabs.com/Tests/scripts/chat_log.php")!
         
-        NetworkManager.shared.getData(from: endpoint) { result in
+        NetworkManager.shared.performDataTask(withUrl: endpoint, andMethod: .get) { result in
             switch result {
             case let .success(data):
                 do {
@@ -41,6 +42,4 @@ class ChatClient {
             }
         }
     }
-    
-    private init() {}
 }
