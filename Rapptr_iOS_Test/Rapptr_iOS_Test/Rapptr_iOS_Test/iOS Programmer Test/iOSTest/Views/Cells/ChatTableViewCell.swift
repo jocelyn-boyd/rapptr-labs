@@ -5,6 +5,7 @@
 //  Copyright © 2020 Rapptr Labs. All rights reserved.
 
 import UIKit
+import Kingfisher
 
 class ChatTableViewCell: UITableViewCell {
     
@@ -33,7 +34,11 @@ class ChatTableViewCell: UITableViewCell {
     
     // MARK: - Public
     func setCellData(message: Message) {
-        header.text = message.username
-        body.text = message.text
+        let url = URL(string: message.avatar_url)
+        userImage.kf.setImage(with: url)
+        header.text = message.name
+        body.text = message.message
     }
+    
+
 }

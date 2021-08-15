@@ -17,6 +17,30 @@
 
 import Foundation
 
-func fetchChatData(_ completion: @escaping ([Message]?) -> Void, withError errorBlock: @escaping (_ error: String?) -> Void) {
-
+class ChatClient {
+    
+    static let manager = ChatClient()
+   
+    func fetchAllMessages(completionHandler: @escaping (Result<[Message],NetworkError>) -> Void) {
+        
+        let endpoint = "http://dev.rapptrlabs.com/Tests/scripts/chat_log.php"
+        
+        NetworkManager.shared.getData(from: endpoint) { result in
+            switch result {
+            case let .success(data):
+                do {
+                    let message = try MessageWrapper.getAllChatMessages(from: data)
+                    completionHandler(.success(message))
+                } catch {
+                    completionHandler(.failure(.unableToDecodeJSON(error)))
+                    print(error.localizedDescription)
+                }
+            case let .failure(error):
+                completionHandler(.failure(.unableToDecodeJSON(error)))
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    private init() {}
 }

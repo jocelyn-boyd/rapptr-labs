@@ -6,7 +6,7 @@
 
 import UIKit
 
-class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ChatViewController: UIViewController {
     
     /**
      * =========================================================================================
@@ -21,57 +21,64 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
      *
      **/
     
-    // MARK: - Properties
-    //private var client: ChatClient?
-    private var messages: [Message]?
-    
     // MARK: - Outlets
     @IBOutlet weak var chatTable: UITableView!
+    
+    // MARK: - Properties
+    private var messages = [Message]() {
+        didSet {
+            self.chatTable.reloadData()
+        }
+    }
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Chat"
-        messages = [Message]()
+        loadChatMessages()
         configureTable(tableView: chatTable)
-        
-        // TODO: Remove test data when we have actual data from the server loaded
-        messages?.append(Message(username: "James", text: "Hey Guys!"))
-        messages?.append(Message(username:"Paul", text:"What's up?"))
-        messages?.append(Message(username:"Amy", text:"Hey! :)"))
-        messages?.append(Message(username:"James", text:"Want to grab some food later?"))
-        messages?.append(Message(username:"Paul", text:"Sure, time and place?"))
-        messages?.append(Message(username:"Amy", text:"YAS! I am starving!!!"))
-        messages?.append(Message(username:"James", text:"1 hr at the Local Burger sound good?"))
-        messages?.append(Message(username:"Paul", text:"Sure thing"))
-        messages?.append(Message(username:"Amy", text:"See you there :P"))
-        
-        chatTable.reloadData()
     }
     
+    // MARK: - Private Methods
+    private func loadChatMessages() {
+        ChatClient.manager.fetchAllMessages { [weak self] result in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                switch result {
+                case let .success(fetchedMessages):
+                    self.messages = fetchedMessages
+                case let .failure(error):
+                    print(error)
+                }
+            }
+        }
+    }
     
-    // MARK: - Configuration Methods
     private func configureTable(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UINib(nibName: "ChatTableViewCell", bundle: nil), forCellReuseIdentifier: "ChatTableViewCell")
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.backgroundColor = UIColor.getChatBackgroundColor()
+        tableView.register(UINib(nibName: "ChatTableViewCell", bundle: nil), forCellReuseIdentifier: "ChatTableViewCell")
     }
-    
-    // MARK: - UITableViewDataSource
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell: ChatTableViewCell? = nil
-        if cell == nil {
-            let nibs = Bundle.main.loadNibNamed("ChatTableViewCell", owner: self, options: nil)
-            cell = nibs?[0] as? ChatTableViewCell
-        }
-        cell?.setCellData(message: messages![indexPath.row])
-        return cell!
-    }
+}
+
+// MARK: - UITableViewDataSource
+extension ChatViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messages!.count
+        return messages.count
     }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChatTableViewCell", for: indexPath) as? ChatTableViewCell else { return UITableViewCell() }
+        
+        cell.setCellData(message: messages[indexPath.row])
+        return cell
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension ChatViewController: UITableViewDelegate {
     
 }
