@@ -23,10 +23,12 @@ class AnimationViewController: UIViewController {
      *
      **/
     
-    @IBOutlet fileprivate weak var logoImage: UIImageView!
+    //MARK: - Outlets
+    @IBOutlet weak var logoImage: UIImageView!
     
-    var logoPanGesture = UIPanGestureRecognizer()
-    var featherPanGesture = UIPanGestureRecognizer()
+    //MARK: - Properties
+    private var logoPanGesture = UIPanGestureRecognizer()
+    private var featherPanGesture = UIPanGestureRecognizer()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -44,7 +46,7 @@ class AnimationViewController: UIViewController {
     }
     
     
-    // MARK: Private Methods
+    // MARK: - Private Methods
     private func configureViewController() {
         logoImage.alpha = 0
         title = "Animation"
@@ -59,7 +61,7 @@ class AnimationViewController: UIViewController {
         logoImage.addGestureRecognizer(logoPanGesture)
     }
     
-    //MARK: @objc Methods
+    // MARK: - @objc Methods
     @objc private func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
        
         if gesture.state == .changed {
