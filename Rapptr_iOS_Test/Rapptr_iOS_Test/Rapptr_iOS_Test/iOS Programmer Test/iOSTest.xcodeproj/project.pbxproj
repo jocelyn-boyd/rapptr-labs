@@ -111,7 +111,6 @@
 		F264BD9B1D7F4F0400275D46 /* iOSTest */ = {
 			isa = PBXGroup;
 			children = (
-				6900F5E021BF4726007AFBB8 /* Assets.xcassets */,
 				F2837BEE1D9AE99D00A57AC8 /* Clients */,
 				F273B63E1D95BD360069037F /* Models */,
 				F273B62D1D95B1B70069037F /* Views */,
@@ -119,6 +118,7 @@
 				F264BD9C1D7F4F0400275D46 /* Supporting Files */,
 				F264BDAD1D7F4F0500275D46 /* Info.plist */,
 				08952BBD26C6B694000500AF /* AppDelegate.swift */,
+				6900F5E021BF4726007AFBB8 /* Assets.xcassets */,
 			);
 			path = iOSTest;
 			sourceTree = "<group>";

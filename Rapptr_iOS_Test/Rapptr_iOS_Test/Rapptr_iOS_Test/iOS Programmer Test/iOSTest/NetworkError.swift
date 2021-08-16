@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum AppError: Error {
+enum NetworkError: Error {
     case invalidUsername
     case unableToComplete
     case invalidResponse

@@ -17,16 +17,14 @@
 
 import Foundation
 
-//delete networking manager and do networking in this file :]
-
 class ChatClient {
     
     static let shared = ChatClient()
-    private init() {}
     
-    func fetchAllMessages(completionHandler: @escaping (Result<[Message],AppError>) -> Void) {
+    func fetchAllMessages(completionHandler: @escaping (Result<[Message],NetworkError>) -> Void) {
         
         guard let endpoint = URL(string:"http://dev.rapptrlabs.com/Tests/scripts/chat_log.php") else {
+            print("invalid URL")
             return
         }
         
@@ -37,10 +35,12 @@ class ChatClient {
                 return
             }
             
-            guard let response = response as? HTTPURLResponse, (200...299) ~= response.statusCode else {
+            guard let response = response as? HTTPURLResponse,
+                  (200...299) ~= response.statusCode else {
                 completionHandler(.failure(.badStatusCode))
                 return
             }
+            print("Chat Client - Status code: \(response.statusCode)")
             
             guard let data = data else {
                 completionHandler(.failure(.invalidData))
@@ -50,10 +50,15 @@ class ChatClient {
             do {
                 let messages = try JSONDecoder().decode(MessageWrapper.self, from: data)
                 completionHandler(.success(messages.data))
-            } catch {
+            } catch let error {
                 completionHandler(.failure(.invalidData))
+                print(error.localizedDescription)
             }
         }
         task.resume()
     }
+    
+    private init() {}
+
+    private let urlSession = URLSession(configuration: URLSessionConfiguration.default)
 }

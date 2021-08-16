@@ -26,13 +26,12 @@ class LoginClient {
     
     static let shared = LoginClient()
     
-    func login(with email: String, password: String, completionHandler: @escaping (Result<Bool,AppError>) -> Void) {
+    func login(with email: String, password: String, completionHandler: @escaping (Result<Bool,NetworkError>) -> Void) {
         
         guard let url = URL(string: "http://dev.rapptrlabs.com/Tests/scripts/login.php") else {
             print("invalid URL")
             return
         }
-        
         
         let paramString = String(format:"email=%@&password=%@", email, password)
         var request = URLRequest(url: url)
@@ -48,10 +47,12 @@ class LoginClient {
                 return
             }
             
-            guard let response = response as? HTTPURLResponse, (200...299) ~= response.statusCode else {
+            guard let response = response as? HTTPURLResponse,
+                  (200...299) ~= response.statusCode else {
                 completionHandler(.failure(.badStatusCode))
                 return
             }
+            print("Login Client - Status code: \(response.statusCode)")
             
             guard let data = data else {
                 completionHandler(.failure(.invalidData))
@@ -63,8 +64,9 @@ class LoginClient {
                 let loginResponse = try JSONDecoder().decode(LoginResponse.self, from: data)
                 isValidatedDataResponse = self.loginValidation(response: loginResponse)
                 completionHandler(.success(isValidatedDataResponse))
-            } catch {
+            } catch let error {
                 completionHandler(.failure(.invalidData))
+                print(error.localizedDescription)
             }
             
         }

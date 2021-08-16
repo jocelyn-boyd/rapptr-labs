@@ -6,10 +6,6 @@
 //  Copyright © 2021 D&ATechnologies. All rights reserved.
 //
 
-enum NetworkError: Error {
-    case unableToDecodeJSON
-}
-
 import Foundation
 
 struct MessageWrapper: Decodable {
