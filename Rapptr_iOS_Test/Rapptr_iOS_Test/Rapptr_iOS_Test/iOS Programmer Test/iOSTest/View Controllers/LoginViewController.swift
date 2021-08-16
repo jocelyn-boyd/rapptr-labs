@@ -66,12 +66,11 @@ class LoginViewController: UIViewController {
             return
         }
         
-        let startTime = Date()
-        
         LoginClient.shared.login(with: email, password: password) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success:
+                    let startTime = Date()
                     let executionTime = self?.calculateExcutionTime(startTime: startTime)
                     self?.displaySuccessAlert(executionTime: executionTime!)
                 case let .failure(error):
@@ -90,9 +89,8 @@ class LoginViewController: UIViewController {
     }
     
     private func displaySuccessAlert(executionTime: Double) {
-        let formatedExecutionTime = String(format: "%.f", executionTime)
         let title = "Success"
-        let message = "Login Successful! API call took about \(formatedExecutionTime) milliseconds"
+        let message = "Login Successful! API call took about \(executionTime) milliseconds"
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
             self.navigationController?.popViewController(animated: true)
@@ -118,5 +116,11 @@ class LoginViewController: UIViewController {
     private func configureTextFields() {
         emailTextField.setLeftPaddingInset(24)
         passwordTextField.setLeftPaddingInset(24)
+
+        emailTextField.attributedPlaceholder = emailTextField.setPlaceholderColor(placeholder: "Email")
+        passwordTextField.attributedPlaceholder = passwordTextField.setPlaceholderColor(placeholder: "Password")
+        
+        emailTextField.textColor = UIColor.getLoginFilledTextColor()
+        passwordTextField.textColor = UIColor.getLoginFilledTextColor()
     }
 }

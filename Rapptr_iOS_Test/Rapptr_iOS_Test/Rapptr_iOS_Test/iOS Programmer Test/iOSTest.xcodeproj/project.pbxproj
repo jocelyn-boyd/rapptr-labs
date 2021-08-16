@@ -248,7 +248,6 @@
 				TargetAttributes = {
 					F264BD981D7F4F0400275D46 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = Y3RGJL5AAS;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
@@ -432,7 +431,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y3RGJL5AAS;
+				DEVELOPMENT_TEAM = 453FAV4WWW;
 				FRAMEWORK_SEARCH_PATHS = "";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = iOSTest/Info.plist;
@@ -458,7 +457,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y3RGJL5AAS;
+				DEVELOPMENT_TEAM = 453FAV4WWW;
 				FRAMEWORK_SEARCH_PATHS = "";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = iOSTest/Info.plist;

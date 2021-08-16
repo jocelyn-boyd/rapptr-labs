@@ -16,9 +16,8 @@ extension UITextField {
         self.leftViewMode = UITextField.ViewMode.always
     }
     
-//    func setPlaceholderColor() -> NSAttributedString {
-//        let placeholderColor = NSAttributedString(string: "Password", attributes: [.foregroundColor: UIColor.getTextFieldPlaceholderColor()])
-//        return placeholderColor
-//    }
-    
+    func setPlaceholderColor(placeholder: String) -> NSAttributedString {
+        let placeholder = NSAttributedString(string: placeholder, attributes: [.foregroundColor: UIColor.getLoginPlaceholderTextColor()])
+        return placeholder
+    }
 }
