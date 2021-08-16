@@ -39,6 +39,4 @@ class ChatTableViewCell: UITableViewCell {
         header.text = message.name
         body.text = message.message
     }
-    
-
 }
