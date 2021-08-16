@@ -26,12 +26,13 @@ class LoginClient {
     
     static let shared = LoginClient()
     
-    func login(with email: String, password: String, completionHandler: @escaping (Result<Bool,Error>) -> Void) {
+    func login(with email: String, password: String, completionHandler: @escaping (Result<Bool,AppError>) -> Void) {
         
         guard let url = URL(string: "http://dev.rapptrlabs.com/Tests/scripts/login.php") else {
             print("invalid URL")
             return
         }
+        
         
         let paramString = String(format:"email=%@&password=%@", email, password)
         var request = URLRequest(url: url)
@@ -40,26 +41,34 @@ class LoginClient {
         
         var isValidatedDataResponse = false
         
-        let session = URLSession.shared
-        session.dataTask(with: request) { data, _, error in
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
             
-            guard let data = data else { return }
-            
-            var response : LoginResponse?
-            
-            do {
-                response = try JSONDecoder().decode(LoginResponse.self, from: data)
-            } catch let error {
-                print("Error", error)
+            if let _ = error {
+                completionHandler(.failure(.unableToComplete))
+                return
             }
             
-            guard response != nil else { return }
+            guard let response = response as? HTTPURLResponse, (200...299) ~= response.statusCode else {
+                completionHandler(.failure(.badStatusCode))
+                return
+            }
             
-            isValidatedDataResponse = self.loginValidation(response: response!)
+            guard let data = data else {
+                completionHandler(.failure(.invalidData))
+                return
+            }
+           
             
-            completionHandler(.success(isValidatedDataResponse))
-
-        }.resume()
+            do {
+                let loginResponse = try JSONDecoder().decode(LoginResponse.self, from: data)
+                isValidatedDataResponse = self.loginValidation(response: loginResponse)
+                completionHandler(.success(isValidatedDataResponse))
+            } catch {
+                completionHandler(.failure(.invalidData))
+            }
+            
+        }
+        task.resume()
     }
     
     private func loginValidation(response : LoginResponse) -> Bool {

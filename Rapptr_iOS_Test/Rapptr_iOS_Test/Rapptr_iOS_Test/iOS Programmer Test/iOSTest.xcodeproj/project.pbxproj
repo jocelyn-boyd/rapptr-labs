@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		087153FB26CA3E5100CDB732 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087153FA26CA3E5100CDB732 /* LoginResponse.swift */; };
+		087153FD26CA464F00CDB732 /* UITextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087153FC26CA464F00CDB732 /* UITextField+Ext.swift */; };
+		087153FF26CA9C7E00CDB732 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087153FE26CA9C7E00CDB732 /* NetworkError.swift */; };
 		08952BBE26C6B694000500AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08952BBD26C6B694000500AF /* AppDelegate.swift */; };
-		08952BC426C743E7000500AF /* ImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08952BC326C743E7000500AF /* ImageView+Ext.swift */; };
-		08952BC926C7675A000500AF /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08952BC826C7675A000500AF /* Color+Ext.swift */; };
+		08952BC426C743E7000500AF /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08952BC326C743E7000500AF /* UIImageView+Ext.swift */; };
+		08952BC926C7675A000500AF /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08952BC826C7675A000500AF /* UIColor+Ext.swift */; };
 		08952BCB26C78B11000500AF /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08952BCA26C78B11000500AF /* Message.swift */; };
 		08952BCD26C78E30000500AF /* ChatClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08952BCC26C78E30000500AF /* ChatClient.swift */; };
 		08952BCF26C78E3D000500AF /* LoginClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08952BCE26C78E3D000500AF /* LoginClient.swift */; };
@@ -32,9 +34,11 @@
 
 /* Begin PBXFileReference section */
 		087153FA26CA3E5100CDB732 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		087153FC26CA464F00CDB732 /* UITextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Ext.swift"; sourceTree = "<group>"; };
+		087153FE26CA9C7E00CDB732 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		08952BBD26C6B694000500AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		08952BC326C743E7000500AF /* ImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Ext.swift"; sourceTree = "<group>"; };
-		08952BC826C7675A000500AF /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
+		08952BC326C743E7000500AF /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
+		08952BC826C7675A000500AF /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		08952BCA26C78B11000500AF /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		08952BCC26C78E30000500AF /* ChatClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatClient.swift; sourceTree = "<group>"; };
 		08952BCE26C78E3D000500AF /* LoginClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginClient.swift; sourceTree = "<group>"; };
@@ -71,8 +75,9 @@
 		08952BC726C74FD1000500AF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				08952BC326C743E7000500AF /* ImageView+Ext.swift */,
-				08952BC826C7675A000500AF /* Color+Ext.swift */,
+				08952BC326C743E7000500AF /* UIImageView+Ext.swift */,
+				08952BC826C7675A000500AF /* UIColor+Ext.swift */,
+				087153FC26CA464F00CDB732 /* UITextField+Ext.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 			children = (
 				08952BC726C74FD1000500AF /* Extensions */,
 				F264BDBD1D7F52E500275D46 /* LaunchScreen.xib */,
+				087153FE26CA9C7E00CDB732 /* NetworkError.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -292,15 +298,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				08952BBE26C6B694000500AF /* AppDelegate.swift in Sources */,
+				087153FF26CA9C7E00CDB732 /* NetworkError.swift in Sources */,
 				08952BCF26C78E3D000500AF /* LoginClient.swift in Sources */,
 				087153FB26CA3E5100CDB732 /* LoginResponse.swift in Sources */,
 				F2603FD2202A4089001BCA22 /* LoginViewController.swift in Sources */,
 				F2603FD4202A4092001BCA22 /* MenuViewController.swift in Sources */,
-				08952BC926C7675A000500AF /* Color+Ext.swift in Sources */,
+				08952BC926C7675A000500AF /* UIColor+Ext.swift in Sources */,
+				087153FD26CA464F00CDB732 /* UITextField+Ext.swift in Sources */,
 				F2603FD0202A4083001BCA22 /* ChatViewController.swift in Sources */,
 				F2603FCE202A407C001BCA22 /* AnimationViewController.swift in Sources */,
 				08952BCD26C78E30000500AF /* ChatClient.swift in Sources */,
-				08952BC426C743E7000500AF /* ImageView+Ext.swift in Sources */,
+				08952BC426C743E7000500AF /* UIImageView+Ext.swift in Sources */,
 				08952BCB26C78B11000500AF /* Message.swift in Sources */,
 				F2603FCB202A404D001BCA22 /* ChatTableViewCell.swift in Sources */,
 			);

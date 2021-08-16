@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
     //private var client: LoginClient?
     private var validateTextFields: (email: String, password: String)? {
         guard let email = emailTextField.text, !email.isEmpty,
-                    let password = passwordTextField.text, !password.isEmpty else {
+              let password = passwordTextField.text, !password.isEmpty else {
             let alertTitle = "Required"
             let alertMessage = "Please fill in all fields"
             makeGeneralAlert(with: alertTitle, message: alertMessage)
@@ -59,50 +59,68 @@ class LoginViewController: UIViewController {
     // MARK: - Actions
     @IBAction func didPressLoginButton(_ sender: Any) {
         
-//        guard let _ = validateTextFields else { return }
-//
-//        guard let email = emailTextField.text,
-//              let password = emailTextField.text
-//        else { return }
+        guard let _ = validateTextFields else { return }
         
-        LoginClient.shared.login(with: "info@rapptrlabs.com", password: "Test123") { result in
-            switch result {
-            case .success:
-                print("Success")
-            case .failure:
-                print("Failure")
+        guard let email = emailTextField.text,      //info@rapptrlabs.com
+              let password = passwordTextField.text    //Test123
+        else { return }
+        
+        guard email == "info@rapptrlabs.com", password == "Test123" else {
+            print(email,password)
+            displayErrorAlert()
+            return
+        }
+        
+        let startTime = Date()
+        
+        LoginClient.shared.login(with: email, password: password) { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success:
+                    let executionTime = self?.calculateExcutionTime(startTime: startTime)
+                    self?.displaySuccessAlert(executionTime: executionTime!)
+                case let .failure(error):
+                    self?.displayErrorAlert()
+                    print(error.localizedDescription)
+                }
             }
         }
     }
     
     // MARK: Private Methods
+    func calculateExcutionTime(startTime: Date) -> Double {
+        let executionTime = Date().timeIntervalSince(startTime)
+        let apiCallExecutionTime = executionTime*1000
+        return apiCallExecutionTime
+    }
     
-    //add success alert
+    private func displaySuccessAlert(executionTime: Double) {
+        let title = "Success"
+        let message = "Login Successful! API call took \(executionTime) milliseconds"
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        present(alert, animated: true)
+    }
+    
+    private func displayErrorAlert() {
+        let title = "Error"
+        let message = "Incorrect Email or Password"
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alert, animated: true)
+    }
+    
     
     private func makeGeneralAlert(with title: String, message: String) {
-      let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
-      alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-      present(alertVC, animated: true, completion: nil)
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alertVC, animated: true, completion: nil)
     }
     
     private func configureTextFields() {
-        let emailTextFieldHeight = self.emailTextField.frame.height
-        let emailPaddingView = UIView(frame: CGRect(x: 0,
-                                                    y: 0,
-                                                    width: 24,
-                                                    height: emailTextFieldHeight))
-        emailTextField.leftView = emailPaddingView
-        emailTextField.leftViewMode = UITextField.ViewMode.always
-        emailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [.foregroundColor: UIColor.getTextFieldPlaceholderColor()])
-   
-        
-        let passwordTextFieldHeight = self.passwordTextField.frame.height
-        let passwordPaddingView =  UIView(frame: CGRect(x: 0,
-                                                        y: 0,
-                                                        width: 24,
-                                                        height: passwordTextFieldHeight))
-        passwordTextField.leftView = passwordPaddingView
-        passwordTextField.leftViewMode = UITextField.ViewMode.always
-        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [.foregroundColor: UIColor.getTextFieldPlaceholderColor()])
+        emailTextField.setLeftPaddingInset(24)
+        passwordTextField.setLeftPaddingInset(24)
     }
 }

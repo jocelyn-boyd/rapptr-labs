@@ -14,15 +14,6 @@ import Foundation
 
 struct MessageWrapper: Decodable {
     let data: [Message]
-    
-    static func getAllChatMessages(from JSONData: Data) throws -> [Message] {
-        do {
-            let result = try JSONDecoder().decode(MessageWrapper.self, from: JSONData)
-            return result.data
-        } catch {
-            throw NetworkError.unableToDecodeJSON
-        }
-    }
 }
 
 struct Message: Decodable {

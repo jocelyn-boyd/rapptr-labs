@@ -24,32 +24,36 @@ class ChatClient {
     static let shared = ChatClient()
     private init() {}
     
-    func fetchAllMessages(completionHandler: @escaping (Result<[Message],Error>) -> Void) {
+    func fetchAllMessages(completionHandler: @escaping (Result<[Message],AppError>) -> Void) {
         
         guard let endpoint = URL(string:"http://dev.rapptrlabs.com/Tests/scripts/chat_log.php") else {
             return
         }
         
-        let urlSession = URLSession.shared.dataTask(with: endpoint) { data , reponse , error  in
+        let task = URLSession.shared.dataTask(with: endpoint) { data , response, error  in
             
-            guard let data = data, error == nil else {
-                print("Error fetching Data.")
+            if let _ = error {
+                completionHandler(.failure(.unableToComplete))
                 return
             }
             
-            var results : MessageWrapper?
-            
-            do {
-                results = try JSONDecoder().decode(MessageWrapper.self, from: data)
-            } catch let error {
-                print("Error", error)
+            guard let response = response as? HTTPURLResponse, (200...299) ~= response.statusCode else {
+                completionHandler(.failure(.badStatusCode))
+                return
             }
             
-            guard let json = results else {return}
+            guard let data = data else {
+                completionHandler(.failure(.invalidData))
+                return
+            }
             
-            completionHandler(.success(json.data))
+            do {
+                let messages = try JSONDecoder().decode(MessageWrapper.self, from: data)
+                completionHandler(.success(messages.data))
+            } catch {
+                completionHandler(.failure(.invalidData))
+            }
         }
- 
-        urlSession.resume()
+        task.resume()
     }
 }
