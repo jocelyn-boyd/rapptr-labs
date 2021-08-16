@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         navController.navigationBar.tintColor = navTintColor
         navController.navigationBar.titleTextAttributes = [.foregroundColor: navTintColor]
+        navController.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
         UINavigationBar.appearance().barTintColor = navBarTintColor
         
         window = UIWindow(frame: UIScreen.main.bounds)

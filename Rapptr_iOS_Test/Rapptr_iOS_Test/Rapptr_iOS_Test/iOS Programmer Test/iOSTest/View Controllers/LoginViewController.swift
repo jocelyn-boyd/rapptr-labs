@@ -33,6 +33,16 @@ class LoginViewController: UIViewController {
     
     // MARK: - Properties
     //private var client: LoginClient?
+    private var validateTextFields: (email: String, password: String)? {
+        guard let email = emailTextField.text, !email.isEmpty,
+                    let password = passwordTextField.text, !password.isEmpty else {
+            let alertTitle = "Required"
+            let alertMessage = "Please fill in all fields"
+            makeGeneralAlert(with: alertTitle, message: alertMessage)
+            return nil
+        }
+        return (email, password)
+    }
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -49,9 +59,25 @@ class LoginViewController: UIViewController {
     // MARK: - Actions
     @IBAction func didPressLoginButton(_ sender: Any) {
         
+//        guard let _ = validateTextFields else { return }
+//
+//        guard let email = emailTextField.text,
+//              let password = emailTextField.text
+//        else { return }
+        
+        LoginClient.shared.login(with: "info@rapptrlabs.com", password: "Test123") { result in
+            switch result {
+            case .success:
+                print("Success")
+            case .failure:
+                print("Failure")
+            }
+        }
     }
     
     // MARK: Private Methods
+    
+    //add success alert
     
     private func makeGeneralAlert(with title: String, message: String) {
       let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)

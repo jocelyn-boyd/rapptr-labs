@@ -41,7 +41,7 @@ class ChatViewController: UIViewController {
     
     // MARK: - Private Methods
     private func loadChatMessages() {
-        ChatClient.manager.fetchAllMessages { [weak self] result in
+        ChatClient.shared.fetchAllMessages { [weak self] result in
             guard let self = self else { return }
             DispatchQueue.main.async {
                 switch result {

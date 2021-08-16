@@ -17,29 +17,39 @@
 
 import Foundation
 
+//delete networking manager and do networking in this file :]
+
 class ChatClient {
     
-    static let manager = ChatClient()
+    static let shared = ChatClient()
     private init() {}
-   
-    func fetchAllMessages(completionHandler: @escaping (Result<[Message],NetworkError>) -> Void) {
+    
+    func fetchAllMessages(completionHandler: @escaping (Result<[Message],Error>) -> Void) {
         
-        let endpoint = URL(string:"http://dev.rapptrlabs.com/Tests/scripts/chat_log.php")!
-        
-        NetworkManager.shared.performDataTask(withUrl: endpoint, andMethod: .get) { result in
-            switch result {
-            case let .success(data):
-                do {
-                    let message = try MessageWrapper.getAllChatMessages(from: data)
-                    completionHandler(.success(message))
-                } catch {
-                    completionHandler(.failure(.unableToDecodeJSON(error)))
-                    print(error.localizedDescription)
-                }
-            case let .failure(error):
-                completionHandler(.failure(.unableToDecodeJSON(error)))
-                print(error.localizedDescription)
-            }
+        guard let endpoint = URL(string:"http://dev.rapptrlabs.com/Tests/scripts/chat_log.php") else {
+            return
         }
+        
+        let urlSession = URLSession.shared.dataTask(with: endpoint) { data , reponse , error  in
+            
+            guard let data = data, error == nil else {
+                print("Error fetching Data.")
+                return
+            }
+            
+            var results : MessageWrapper?
+            
+            do {
+                results = try JSONDecoder().decode(MessageWrapper.self, from: data)
+            } catch let error {
+                print("Error", error)
+            }
+            
+            guard let json = results else {return}
+            
+            completionHandler(.success(json.data))
+        }
+ 
+        urlSession.resume()
     }
 }

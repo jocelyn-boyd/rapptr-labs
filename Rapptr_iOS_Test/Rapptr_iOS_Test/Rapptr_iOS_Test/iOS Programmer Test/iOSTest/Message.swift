@@ -6,6 +6,10 @@
 //  Copyright © 2021 D&ATechnologies. All rights reserved.
 //
 
+enum NetworkError: Error {
+    case unableToDecodeJSON
+}
+
 import Foundation
 
 struct MessageWrapper: Decodable {
@@ -16,7 +20,7 @@ struct MessageWrapper: Decodable {
             let result = try JSONDecoder().decode(MessageWrapper.self, from: JSONData)
             return result.data
         } catch {
-            throw NetworkError.unableToDecodeJSON(error)
+            throw NetworkError.unableToDecodeJSON
         }
     }
 }
