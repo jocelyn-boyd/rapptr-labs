@@ -43,6 +43,11 @@ class AnimationViewController: UIViewController {
             self.logoImage.alpha = 1
         }
         self.navigationItem.rightBarButtonItem?.isEnabled = true
+        
+        UIView.transition(with: view, duration: 2, options: .transitionCrossDissolve, animations: {
+            let backgroundColor = UIColor(red: 52/255, green: 169/255, blue: 207/255, alpha: 1)
+            self.view.backgroundColor = backgroundColor
+        }, completion: nil)
     }
     
     
@@ -77,6 +82,7 @@ class AnimationViewController: UIViewController {
     
     @objc func resetButtonTapped() {
         logoImage.alpha = 0
+        view.backgroundColor = UIColor.getUIViewBackgroundColor()
         self.navigationItem.rightBarButtonItem?.isEnabled = false
     }
 }
