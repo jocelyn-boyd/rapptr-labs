@@ -51,11 +51,6 @@ class LoginViewController: UIViewController {
         configureTextFields()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     // MARK: - Actions
     @IBAction func didPressLoginButton(_ sender: Any) {
         
@@ -95,8 +90,9 @@ class LoginViewController: UIViewController {
     }
     
     private func displaySuccessAlert(executionTime: Double) {
+        let formatedExecutionTime = String(format: "%.f", executionTime)
         let title = "Success"
-        let message = "Login Successful! API call took \(executionTime) milliseconds"
+        let message = "Login Successful! API call took about \(formatedExecutionTime) milliseconds"
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
             self.navigationController?.popViewController(animated: true)
